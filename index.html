@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- 
+movie->ticket_recipt -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="clone.css">
+    <style>
+        /* Add some styles for the search bar */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        #searchBar {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<script>
+    function nxtpage1(){
+        window.location.href="movie3.html";
+    }
+
+    function nxtpage2(){
+        window.location.href="movie4.html";
+    }
+
+    function nxtpage3(){
+        window.location.href="movie5.html";
+    }
+
+    function nxtpage4(){
+        window.location.href="movie6.html";
+    }
+
+    function nxtpage5(){
+        window.location.href="movie7.html";
+    }
+
+    function nxtpage6(){
+        window.location.href="movie8.html";
+    }
+
+    function nxtpage7(){
+        window.location.href="movie9.html";
+    }
+
+    function nxtpage8(){
+        window.location.href="movie10.html";
+    }
+
+    function nxtpage9(){
+        window.location.href="movie11.html";
+    }
+
+    function nxtpage10(){
+        window.location.href="movie12.html";
+    }
+
+    function nxtpage11(){
+        window.location.href="movie13.html";
+    }
+
+    function nxtpage12(){
+        window.location.href="movie14.html";
+    }
+
+    function nxtpage13(){
+        window.location.href="movie15.html";
+    }
+
+    function nxtpage14(){
+        window.location.href="movie16.html";
+    }
+
+    function nxtpage15(){
+        window.location.href="movie2.html";
+    }
+
+    function nxtpage16(){
+        window.location.href="movie1.html"
+    }
+
+    // Function to filter movies based on search input
+    function searchMovies() {
+        const input = document.getElementById('searchBar').value.toLowerCase();
+        const movies = document.getElementsByClassName('movie');
+        
+        for (let i = 0; i < movies.length; i++) {
+            const movieTitle = movies[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+            if (movieTitle.includes(input)) {
+                movies[i].style.display = "";
+            } else {
+                movies[i].style.display = "none";
+            }
+        }
+    }
+</script>
+<body id="body1">
+    <div id="div1">
+        <center><img src="images/img1.png" alt="img1" id="img1"></center>
+        <center><h1 id="divh1">Y SHOW</h1></center>
+    </div>
+
+    <!-- Search bar container -->
+    <div class="search-container">
+        <input type="text" id="searchBar" onkeyup="searchMovies()" placeholder="Search for movies..">
+    </div>
+
+    <div id="div2">
+        <center><img id="img2" src="images/Screenshot 2024-08-07 074002.png" alt=""></center>
+    </div>
+
+    <div class="movie-container">
+        <div class="movie">
+            <img src="images/img2.png" alt="Deadpool & Wolverine">
+            <div class="movie-info">
+                <h3>Deadpool & Wolverine</h3>
+                <p>English, Hindi, Tamil, Telugu</p>
+                <button id="button1" onclick="nxtpage16()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/img3.png" alt="Auron Mein Kahan Dum Tha">
+            <div class="movie-info">
+                <h3>Auron Mein Kahan</h3>
+                <p>Hindi</p>
+                <button id="button2" onclick="nxtpage15()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/img4.png" alt="Ulajh">
+            <div class="movie-info">
+                <h3>Ulajh</h3>
+                <p>Hindi</p>
+                <button id="button3" onclick="nxtpage1()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/img5.png" alt="Bad Newz">
+            <div class="movie-info">
+                <h3>Bad Newz</h3>
+                <p>Hindi</p>
+                <button id="button4" onclick="nxtpage2()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/img6.png" alt="Deadpool & Wolverine">
+            <div class="movie-info">
+                <h3>Garath Ganapathi</h3>
+                <p>Hindi</p>
+                <button id="button5" onclick="nxtpage3()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/img7.png" alt="Auron Mein Kahan Dum Tha">
+            <div class="movie-info">
+                <h3>Kalki</h3>
+                <p>Hindi, Telugu, Tamil, Malayalam</p>
+                <button id="button6" onclick="nxtpage4()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/8.png" alt="Ulajh">
+            <div class="movie-info">
+                <h3>Despicable ME4</h3>
+                <p>English</p>
+                <button id="button7" onclick="nxtpage5()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/9.png" alt="Bad Newz">
+            <div class="movie-info">
+                <h3>Baapu</h3>
+                <p>Hindi</p>
+                <button id="button8" onclick="nxtpage6()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/10.png" alt="Deadpool & Wolverine">
+            <div class="movie-info">
+                <h3>Kill</h3>
+                <p>Hindi</p>
+                <button id="button9" onclick="nxtpage7()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/11.png" alt="Auron Mein Kahan Dum Tha">
+            <div class="movie-info">
+                <h3>Trap</h3>
+                <p>English</p>
+                <button id="button10" onclick="nxtpage8()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/12.png" alt="Ulajh">
+            <div class="movie-info">
+                <h3>Rayaan</h3>
+                <p>Hindi, Tamil, Telugu</p>
+                <button id="button11" onclick="nxtpage9()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/13.png" alt="Bad Newz">
+            <div class="movie-info">
+                <h3>Inside Out 2</h3>
+                <p>English</p>
+                <button id="button12" onclick="nxtpage10()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/14.png" alt="Deadpool & Wolverine">
+            <div class="movie-info">
+                <h3>RockStar</h3>
+                <p>Hindi</p>
+                <button id="button13" onclick="nxtpage11()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/15.png" alt="Auron Mein Kahan Dum Tha">
+            <div class="movie-info">
+                <h3>Maharaja</h3>
+                <p>Telugu, Hindi, Tamil</p>
+                <button id="button14" onclick="nxtpage12()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/16.png" alt="Ulajh">
+            <div class="movie-info">
+                <h3>Munjya</h3>
+                <p>Hindi</p>
+                <button id="button15" onclick="nxtpage13()">Book tickets</button>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="images/17.png" alt="Bad Newz">
+            <div class="movie-info">
+                <h3>LongLegs</h3>
+                <p>English</p>
+                <button id="button16" onclick="nxtpage14()">Book tickets</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

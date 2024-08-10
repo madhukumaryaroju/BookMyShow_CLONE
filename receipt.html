@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Receipt</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            margin: 50px auto;
+            border-radius: 10px;
+            width: 60%;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #ff5757;
+            width: 100%;
+            margin: 0 0 20px 0;
+            font-size: 32px;
+        }
+        .info {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .info ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        .info ul li {
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        .info ul li:last-child {
+            border-bottom: none;
+        }
+        .info ul li span {
+            font-weight: bold;
+            color: #ff5757;
+            margin-right: 5px;
+        }
+        .receipt-details {
+            flex: 1;
+        }
+        .image-container {
+            width: 200px;
+            height: 100%;
+            margin-left: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .image-container {
+                margin-left: 0;
+                margin-top: 20px;
+                width: 100%;
+            }
+            .image-container img {
+                border-radius: 0;
+            }
+        }
+    </style>
+</head><body>
+    <div class="container">
+        <div class="receipt-details">
+            <h1>Booking Receipt</h1>
+            <div class="info" id="receipt-info"></div>
+        </div>
+        <div class="image-container">
+            <img src="images/img1.png" alt="Receipt Image">
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            let receiptInfo = '<ul>';
+            for (const [key, value] of params.entries()) {
+                receiptInfo += `<li><span>${key.charAt(0).toUpperCase() + key.slice(1)}:</span> ${value}</li>`;
+            }
+            receiptInfo += '</ul>';
+            document.getElementById('receipt-info').innerHTML = receiptInfo;
+        }
+    </script>
+</body>
+</html>

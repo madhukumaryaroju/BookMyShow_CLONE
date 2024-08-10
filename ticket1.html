@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Counter</title>
+    <style>
+        body {
+            background-image: url('kalki.png');
+            background-size: cover;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 40px;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            border-bottom: 2px solid #ff5757;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            width: 60%;
+            margin: 30px auto;
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="date"] {
+            width: calc(100% - 16px);
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .radio-group, .checkbox-group {
+            margin: 20px 0;
+        }
+        .radio-group label, .checkbox-group label {
+            margin-right: 15px;
+        }
+        .radio-group input, .checkbox-group input {
+            margin-right: 5px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #ff5757;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #e14b4b;
+        }
+        @media (max-width: 768px) {
+            form {
+                width: 80%;
+            }
+            h1 {
+                font-size: 30px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Booking Counter</h1>
+    <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" title="Name" name="Name" required>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" title="Age" name="Age" required>
+
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" title="Mobile" name="Mobile" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" title="Email" name="Email" required>
+
+        <label>Gender:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="Gender" value="Male" title="Male" required> Male</label>
+            <label><input type="radio" name="Gender" value="Female" title="Female"> Female</label>
+        </div>
+
+        <label>No Of Tickets:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="ticketcount" value="1" title="1"> 1</label>
+            <label><input type="checkbox" name="ticketcount" value="2" title="2"> 2</label>
+            <label><input type="checkbox" name="ticketcount" value="3" title="3"> 3</label>
+            <label><input type="checkbox" name="ticketcount" value="4" title="4"> 4</label>
+            <label><input type="checkbox" name="ticketcount" value="5" title="5"> 5</label>
+            <label><input type="checkbox" name="ticketcount" value="6" title="6"> 6</label>
+        </div>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required title="date">
+
+        <label>Shows:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="Shows" value="09:20 am" title="09:20 am" required> 09:20 am</label>
+            <label><input type="radio" name="Shows" value="12:00 pm" title="12:00 pm"> 12:00 pm</label>
+            <label><input type="radio" name="Shows" value="03:20 pm" title="03:20 pm"> 03:20 pm</label>
+            <label><input type="radio" name="Shows" value="06:00 pm" title="06:00 pm"> 06:00 pm</label>
+            <label><input type="radio" name="Shows" value="09:00 pm" title="09:00 pm"> 09:00 pm</label>
+        </div>
+
+        <label>ADD ON:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="addon" value="Popcorn" title="Popcorn"> Popcorn</label>
+            <label><input type="checkbox" name="addon" value="Samosa" title="Samosa"> Samosa</label>
+            <label><input type="checkbox" name="addon" value="Coke drink" title="Coke drink"> Coke drink</label>
+            <label><input type="checkbox" name="addon" value="Burger" title="Burger"> Burger</label>
+            <label><input type="checkbox" name="addon" value="French fries" title="French fries"> French fries</label>
+            <label><input type="checkbox" name="addon" value="Chocolates" title="Chocolates"> Chocolates</label>
+        </div>
+        <label>Choose Movie</label>
+        <div> 
+            <label><input type="checkbox" name="movie" value="Deadpool & Wolverine"> Deadpool & Wolverine</label>
+            <label><input type="checkbox" name="movie" value="Auron Mein Kahan"> Auron Mein Kahan</label>
+            <label><input type="checkbox" name="movie" value="Ulajh"> Ulajh</label>
+            <label><input type="checkbox" name="movie" value="Bad Newz"> Bad Newz</label>
+            <label><input type="checkbox" name="movie" value="Garath Ganapathi"> Garath Ganapathi</label>
+            <label><input type="checkbox" name="movie" value="Kalki"> Kalki</label>
+            <label><input type="checkbox" name="movie" value="Despicable ME4"> Despicable ME4</label>
+            <label><input type="checkbox" name="movie" value="Baapu"> Baapu</label>
+            <label><input type="checkbox" name="movie" value="Kill"> Kill</label>
+            <label><input type="checkbox" name="movie" value="Trap"> Trap</label>
+            <label><input type="checkbox" name="movie" value="Rayaan"> Rayaan</label>
+            <label><input type="checkbox" name="movie" value="Inside Out 2"> Inside Out 2</label>
+            <label><input type="checkbox" name="movie" value="RockStar"> RockStar</label>
+            <label><input type="checkbox" name="movie" value="Maharaja"> Maharaja</label>
+            <label><input type="checkbox" name="movie" value="Munjya"> Munjya</label>
+            <label><input type="checkbox" name="movie" value="LongLegs">LongLegs</label>
+        </div>
+
+
+        <button type="button" class="submit-btn" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('bookingForm');
+            const formData = new FormData(form);
+            const params = new URLSearchParams(formData).toString();
+            navigateToReceipt1(params);
+            navigateToReceipt2(params);
+            navigateToReceipt3(params);
+            navigateToReceipt4(params);
+            navigateToReceipt5(params);
+            navigateToReceipt6(params);
+            navigateToReceipt7(params);
+            navigateToReceipt8(params);
+            navigateToReceipt9(params);
+            navigateToReceipt10(params);
+            navigateToReceipt11(params);
+            navigateToReceipt12(params);
+            navigateToReceipt13(params);
+            navigateToReceipt14(params);
+            navigateToReceipt15(params);
+        }
+
+        function navigateToReceipt1(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt2(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt3(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt4(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt5(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt6(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt7(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt8(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt9(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt10(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt11(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt12(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt13(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt14(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+
+        function navigateToReceipt15(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+    </script>
+</body>
+</html>
