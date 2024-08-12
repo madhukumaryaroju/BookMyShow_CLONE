@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +80,70 @@
                 padding: 15px;
             }
         }
+
+        .counter-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .button, .button2 {
+            font-size: 20px;
+            width: 10%;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover, .button2:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .button:active, .button2:active {
+            background-color: #003d80;
+            transform: scale(0.98);
+        }
+
+        .button:focus, .button2:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+        }
+
+        .display {
+            font-size: 20px;
+            font-weight: bold;
+        }
     </style>
+    <script>
+        let count = 0;
+
+        function increment() {
+            count++;
+            document.getElementById('counter').innerText = count;
+        }
+
+        function decrement() {
+            count--;
+            document.getElementById('counter').innerText = count;
+        }
+
+        function submitForm() {
+            const form = document.getElementById('bookingForm');
+            const formData = new FormData(form);
+            formData.append("Tickets", count); // Add the ticket count to the form data
+            const params = new URLSearchParams(formData).toString();
+            navigateToReceipt(params);
+        }
+
+        function navigateToReceipt(params) {
+            window.location.href = `receipt.html?${params}`;
+        }
+    </script>
 </head>
 <body>
     <h1>Booking Counter</h1>
@@ -103,14 +167,11 @@
         </div>
 
         <label>No Of Tickets:</label>
-        <div class="checkbox-group">
-            <label><input type="radio" name="ticketcount" value="1" title="1"> 1</label>
-            <label><input type="radio" name="ticketcount" value="2" title="2"> 2</label>
-            <label><input type="radio" name="ticketcount" value="3" title="3"> 3</label>
-            <label><input type="radio" name="ticketcount" value="4" title="4"> 4</label>
-            <label><input type="radio" name="ticketcount" value="5" title="5"> 5</label>
-            <label><input type="radio" name="ticketcount" value="6" title="6"> 6</label>
-        </div>
+        <div class="counter-container">
+            <input type="button" class="button" onclick="increment()" value="+"></input>
+            <div id="counter" class="display">0</div>
+            <input type="button" class="button2" onclick="decrement()" value="-"></input>
+        </div> <br>
 
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" required title="date">
@@ -133,6 +194,7 @@
             <label><input type="radio" name="addon" value="French fries" title="French fries"> French fries</label>
             <label><input type="radio" name="addon" value="Chocolates" title="Chocolates"> Chocolates</label>
         </div>
+        
         <label>Choose Movie</label>
         <div> 
             <label><input type="radio" name="movie" value="Deadpool & Wolverine"> Deadpool & Wolverine</label>
@@ -145,99 +207,13 @@
             <label><input type="radio" name="movie" value="Baapu"> Baapu</label>
             <label><input type="radio" name="movie" value="Kill"> Kill</label>
             <label><input type="radio" name="movie" value="Trap"> Trap</label>
-            <label><input type="radio" name="movie" value="Rayaan"> Rayaan</label>
-            <label><input type="radio" name="movie" value="Inside Out 2"> Inside Out 2</label>
-            <label><input type="radio" name="movie" value="RockStar"> RockStar</label>
-            <label><input type="radio" name="movie" value="Maharaja"> Maharaja</label>
-            <label><input type="radio" name="movie" value="Munjya"> Munjya</label>
-            <label><input type="radio" name="movie" value="LongLegs">LongLegs</label>
+            <label><input type="radio" name="movie" value="Rayaan"> Rayaan</label
+
+>
+            <label><input type="radio" name="movie" value="Testimony"> Testimony</label>
         </div>
-
-
-        <button type="button" class="submit-btn" onclick="submitForm()">Submit</button>
+        
+        <input type="button" class="submit-btn" value="Submit" onclick="submitForm()">
     </form>
-
-    <script>
-        function submitForm() {
-            const form = document.getElementById('bookingForm');
-            const formData = new FormData(form);
-            const params = new URLSearchParams(formData).toString();
-            navigateToReceipt1(params);
-            navigateToReceipt2(params);
-            navigateToReceipt3(params);
-            navigateToReceipt4(params);
-            navigateToReceipt5(params);
-            navigateToReceipt6(params);
-            navigateToReceipt7(params);
-            navigateToReceipt8(params);
-            navigateToReceipt9(params);
-            navigateToReceipt10(params);
-            navigateToReceipt11(params);
-            navigateToReceipt12(params);
-            navigateToReceipt13(params);
-            navigateToReceipt14(params);
-            navigateToReceipt15(params);
-        }
-
-        function navigateToReceipt1(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt2(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt3(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt4(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt5(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt6(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt7(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt8(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt9(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt10(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt11(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt12(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt13(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt14(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-
-        function navigateToReceipt15(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-    </script>
 </body>
 </html>
