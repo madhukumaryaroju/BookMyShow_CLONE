@@ -22,6 +22,27 @@ movie->ticket_recipt -->
             padding: 10px;
             font-size: 16px;
         }
+
+        .marquee {
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                box-sizing: border-box;
+                animation: marquee 5s linear infinite alternate;
+                font-size: 50px;
+                background-color: rgb(242, 136, 136); 
+                color: #333; 
+                padding: 10px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        body{
+            background-color: rgb(242, 136, 136); ;
+        }
+
+        
+
+         
     </style>
 </head>
 <script>
@@ -105,10 +126,10 @@ movie->ticket_recipt -->
     }
 </script>
 <body id="body1">
-    <div id="div1">
-        <center><img src="images/img1.png" alt="img1" id="img1"></center>
-        <center><h1 id="divh1">Y SHOW</h1></center>
-    </div>
+    <div class="marquee">
+        <marquee behavior="alternate" direction="left">Book Your Show </marquee>
+
+      </div>
 
     <!-- Search bar container -->
     <div class="search-container">
