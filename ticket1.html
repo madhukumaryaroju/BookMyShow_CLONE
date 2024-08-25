@@ -119,31 +119,36 @@
             font-weight: bold;
         }
     </style>
-    <script>
-        let count = 0;
+   <script>
+    let count = 0;
 
-        function increment() {
-            count++;
-            document.getElementById('counter').innerText = count;
-        }
+    function increment() {
+        count++;
+        document.getElementById('counter').innerText = count;
+    }
 
-        function decrement() {
+    function decrement() {
+        if (count > 0) { // Prevent count from going negative
             count--;
             document.getElementById('counter').innerText = count;
         }
+        document.getElementById('counter').innerText = count;
+    }
 
-        function submitForm() {
-            const form = document.getElementById('bookingForm');
-            const formData = new FormData(form);
-            formData.append("Tickets", count); // Add the ticket count to the form data
-            const params = new URLSearchParams(formData).toString();
-            navigateToReceipt(params);
-        }
+    function submitForm() {
+        const form = document.getElementById('bookingForm');
+        const formData = new FormData(form);
+        formData.append("Tickets", count); // Add the ticket count to the form data
+        formData.append("Cost", count * 100); // Calculate and add the total cost to the form data
+        const params = new URLSearchParams(formData).toString();
+        navigateToReceipt(params);
+    }
 
-        function navigateToReceipt(params) {
-            window.location.href = `receipt.html?${params}`;
-        }
-    </script>
+    function navigateToReceipt(params) {
+        window.location.href = `rec.html?${params}`;
+    }
+</script>
+
 </head>
 <body>
     <h1>Booking Counter</h1>

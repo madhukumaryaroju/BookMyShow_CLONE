@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .receipt-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 50%;
+            margin: 50px auto;
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #ff5757;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #e14b4b;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt-container">
+        <h1>Booking Receipt</h1>
+        <p id="name"></p>
+        <p id="mobile"></p>
+        <p id="email"></p>
+        <p id="showTime"></p>
+        <p id="movie"></p>
+        <p id="tickets"></p>
+        <p id="cost"></p>
+        <button class="button" onclick="proceedToPayment()">Proceed to Pay</button>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('Name'),
+                mobile: params.get('Mobile'),
+                email: params.get('Email'),
+                showTime: params.get('Shows'),
+                movie: params.get('movie'),
+                tickets: params.get('Tickets'),
+                cost: params.get('Cost')
+            };
+        }
+
+        function displayReceipt() {
+            const { name, mobile, email, showTime, movie, tickets, cost } = getQueryParams();
+            document.getElementById('name').innerText = `Name: ${name}`;
+            document.getElementById('mobile').innerText = `Mobile: ${mobile}`;
+            document.getElementById('email').innerText = `Email: ${email}`;
+            document.getElementById('showTime').innerText = `Show Time: ${showTime}`;
+            document.getElementById('movie').innerText = `Movie: ${movie}`;
+            document.getElementById('tickets').innerText = `Number of Tickets: ${tickets}`;
+            document.getElementById('cost').innerText = `Total Cost: ₹${cost}`;
+        }
+
+        function proceedToPayment() {
+            alert('Proceeding to payment...');
+            window.location.href="payment.html";
+            // Here you could redirect to a payment gateway or handle the payment process.
+        }
+
+        // Initialize receipt display
+        displayReceipt();
+    </script>
+</body>
+</html>

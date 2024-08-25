@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .payment-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 50%;
+            margin: 50px auto;
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #ff5757;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #e14b4b;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Payment Details</h1>
+        <form id="paymentForm">
+            <label for="cardNumber">Credit Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter your credit card number" required>
+
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="password" id="cvv" name="cvv" placeholder="Enter CVV" required>
+
+            <label for="cardholderName">Cardholder Name:</label>
+            <input type="text" id="cardholderName" name="cardholderName" placeholder="Enter cardholder name" required>
+
+            <button type="button" class="button" onclick="processPayment()">Pay</button>
+        </form>
+    </div>
+
+    <script>
+        function processPayment() {
+            alert('Payment processed successfully!');
+
+            // Simulate sending email with receipt
+            const params = new URLSearchParams(window.location.search);
+            const email = params.get('Email');
+            
+            sendReceiptEmail(email);
+        }
+
+        function sendReceiptEmail(email) {
+            // Normally you would call a backend service here
+            alert(`A receipt has been sent to mail`);
+
+            // Simulate redirection back to homepage or order confirmation
+            window.location.href = 'index.html'; // Change this to the actual page you want to redirect to
+        }
+    </script>
+</body>
+</html>
